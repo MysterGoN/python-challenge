@@ -3,7 +3,7 @@
 import os
 import pickle
 
-from common import EXTERNAL_FOLDER
+from common import EXTERNAL_FOLDER, download_file
 from pprint import pprint
 from urllib import request
 
@@ -12,8 +12,7 @@ sound_page = f'http://www.pythonchallenge.com/pc/def/{file_name}'
 
 file_path = os.path.join(f'{EXTERNAL_FOLDER}/{file_name}')
 
-file = request.URLopener()
-file.retrieve(sound_page, file_path)
+download_file(sound_page, file_path)
 
 with open(file_path, 'br') as f:
     data = pickle.load(f)
