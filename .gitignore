@@ -133,3 +133,5 @@ dmypy.json
 
 # external
 /external/ignore
+
+.idea/
