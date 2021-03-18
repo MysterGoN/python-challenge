@@ -2,7 +2,14 @@
 # User: huge
 # Password: file
 
+import os
+from common import IGNORE_FOLDER
 from PIL import Image, ImageDraw
+
+LVL_FOLDER = f'{IGNORE_FOLDER}/lvl-09'
+
+if not os.path.exists(LVL_FOLDER):
+    os.makedirs(LVL_FOLDER, exist_ok=True)
 
 def draw_lines(draw: ImageDraw, dots: list, color: str):
     dots = dots[:]
@@ -56,4 +63,4 @@ d = ImageDraw.Draw(img)
 draw_lines(d, first, 'black')
 draw_lines(d, second, 'black')
  
-img.save('test.png')
+img.save(f'{LVL_FOLDER}/image.png')
